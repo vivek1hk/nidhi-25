@@ -4,10 +4,9 @@
   "description": "Ready-to-go Preact starter project powered by webpack.",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
-    "start": "sirv build -s -q -e",
-    "prestart": "npm run build",
+    "start": "node server.js",
     "build": "cross-env NODE_ENV=production webpack --progress",
-    "prebuild": "mkdirp build && ncp src/assets build/assets",
+    "heroku-postbuild": "npm run build",
     "test": "npm run -s lint && jest --coverage",
     "test:watch": "npm run -s test -- --watch",
     "lint": "eslint src test"
